@@ -11,8 +11,33 @@
 }
 .site-layout .site-layout-background {
   background: #fff;
+  padding: 0%;
+}
+.site-layout .header {
+  padding: 0;
+  padding-left: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.site-layout .content{
+  margin: 0px 16px;
+}
+.site-layout .content .body{
+  padding: 0px;
+  min-height: 360px;
 }
 
-.choseRowStyle {
-  background: #1890ff;
+.site-layout .footer{
+  text-align: center;
 }
+/* .clear-fix:after {
+  content: "ddd";
+  visibility: hidden;
+  clear: both;
+  display: block;
+  height: 0;
+} */
+/* .ant-breadcrumb{
+  float: left;
+} */

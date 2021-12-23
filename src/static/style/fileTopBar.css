@@ -1,0 +1,8 @@
+#bread-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+#bread-buttons .top-buttons {
+  align-self: center;
+}

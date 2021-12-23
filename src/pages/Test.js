@@ -1,10 +1,15 @@
-import { Button } from "element-react";
+// import { Button } from "element-react";
+// import React, { useState, createContext } from 'react'
 
-function Test() {
-    return (
-        <div>
-            <Button>test</Button>
-        </div>
-    )
-}
-export default Test
+// export const numContext = createContext()
+
+// function Test() {
+//     const [num, setNum] = useState(0)
+//     numContext(num)
+//     return (
+//         <div>
+//             <>{num}</>
+//         </div>
+//     )
+// }
+// export default Test
