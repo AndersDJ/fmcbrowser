@@ -1,9 +1,9 @@
 import { Upload, message, Button } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
 import { useContext, useState } from 'react';
 import { BasePathContext } from '../pages/FileControl';
 import Modal from 'antd/lib/modal/Modal';
 import {
+    InboxOutlined,
     UploadOutlined,
 } from '@ant-design/icons';
 

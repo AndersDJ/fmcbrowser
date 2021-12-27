@@ -49,13 +49,11 @@ function SearchInput(props) {
       fetch(value, data => setData(data));
     } else {
       setData([])
-      // this.setState({ data: [] });
     }
   };
 
   const handleChange = value => {
     setValue(value)
-    // this.setState({ value });
   };
 
   const options = data.map(d => <Option key={d.value}>{d.text}</Option>);

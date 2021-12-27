@@ -14,8 +14,8 @@ import BreadTop from '../components/BreadTop';
 export const BasePathContext = createContext({
     basePath: "",
     refresh: true,
-    setBasePath: () => { },
-    setRefresh: () => { },
+    setBasePath: Function.prototype,
+    setRefresh: Function.prototype,
 
 });
 export const RowContext = createContext({
@@ -24,16 +24,6 @@ export const RowContext = createContext({
 })
 
 const { Header, Content, Footer } = Layout;
-
-// function isNumber(val) {
-//     var regPos = /^\d+(\.\d+)?$/; //非负浮点数
-//     var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
-//     if (regPos.test(val) || regNeg.test(val)) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
 
 function timeToTimestamp(date) {
     date = date.substring(0, 19);

@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import '../static/style/menuLeft.css'
 import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
+    DesktopOutlined,
+    PieChartOutlined,
+    FileOutlined,
+    TeamOutlined,
+    UserOutlined,
 } from '@ant-design/icons';
-const { SubMenu} = Menu
+const { SubMenu } = Menu
 
 
 function MenuLeft() {
     const [collapsed, setCollapsed] = useState(false)
     const onCollapse = () => {
         setCollapsed(!collapsed)
-        // this.setState({ collapsed });
     };
     return (
         <Layout.Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>

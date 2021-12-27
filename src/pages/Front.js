@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import '../static/style/Login.css'
 import axios from 'axios';
@@ -29,14 +29,14 @@ function Front() {
     };
 
 
-    const [form, setForm] = useState({
-        name: '',
-        pass:'',
-        loading: false,
-    })
-    const [lastLogin,setLastLogin] = useState(0)
-    const [data,setData] = useState({})
-    const navigate = useNavigate()
+    // const [form, setForm] = useState({
+    //     name: '',
+    //     pass: '',
+    //     loading: false,
+    // })
+    // const [lastLogin,setLastLogin] = useState(0)
+    // const [data,setData] = useState({})
+    // const navigate = useNavigate()
 
     return (
         <div className='card'>
