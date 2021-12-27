@@ -41,40 +41,40 @@ function fetch(value, callback) {
 }
 
 function SearchInput(props) {
-    const [data, setData] = useState([])
-    const [value, setValue] = useState(undefined)
+  const [data, setData] = useState([])
+  const [value, setValue] = useState(undefined)
 
-    function handleSearch(value) {
-        if (value) {
-            fetch(value, data =>  setData(data));
-        } else {
-            setData([])
-            // this.setState({ data: [] });
-        }
-    };
+  function handleSearch(value) {
+    if (value) {
+      fetch(value, data => setData(data));
+    } else {
+      setData([])
+      // this.setState({ data: [] });
+    }
+  };
 
-    const handleChange = value => {
-        setValue(value)
-        // this.setState({ value });
-    };
+  const handleChange = value => {
+    setValue(value)
+    // this.setState({ value });
+  };
 
-    const options = data.map(d => <Option key={d.value}>{d.text}</Option>);
-    return (
-        <Select
-            showSearch
-            value={value}
-            placeholder={props.placeholder}
-            style={props.style}
-            defaultActiveFirstOption={false}
-            showArrow={false}
-            filterOption={false}
-            onSearch={handleSearch}
-            onChange={handleChange}
-            notFoundContent={null}
-        >
-            {options}
-        </Select>
-    );
+  const options = data.map(d => <Option key={d.value}>{d.text}</Option>);
+  return (
+    <Select
+      showSearch
+      value={value}
+      placeholder={props.placeholder}
+      style={props.style}
+      defaultActiveFirstOption={false}
+      showArrow={false}
+      filterOption={false}
+      onSearch={handleSearch}
+      onChange={handleChange}
+      notFoundContent={null}
+    >
+      {options}
+    </Select>
+  );
 }
 
 export default SearchInput

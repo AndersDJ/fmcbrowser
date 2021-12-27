@@ -8,7 +8,6 @@ import {
 } from '@ant-design/icons';
 import Base64 from 'crypto-js/enc-base64'
 import Utf8 from 'crypto-js/enc-utf8'
-import UploadFiles from '../components/UploadFiles';
 import FileTableTopBar from '../components/FileTableTopBar';
 import BreadTop from '../components/BreadTop';
 
@@ -17,7 +16,12 @@ export const BasePathContext = createContext({
     refresh: true,
     setBasePath: () => { },
     setRefresh: () => { },
+
 });
+export const RowContext = createContext({
+    selectedRowKeys: [],
+    response: [],
+})
 
 const { Header, Content, Footer } = Layout;
 
@@ -222,22 +226,31 @@ function FileControl() {
                                 rowSelection={rowSelection}
                                 title={() => {
                                     return (
-                                        <BasePathContext.Provider
-                                            value={{ basePath, refresh, setRefresh }}
+                                        <RowContext.Provider
+                                            value={{
+                                                selectedRowKeys: selectedRowKeys,
+                                                response: response,
+                                            }}
                                         >
-                                            <FileTableTopBar />
-                                        </BasePathContext.Provider>
+                                            <BasePathContext.Provider
+                                                value={{
+                                                    basePath,
+                                                    refresh,
+                                                    setRefresh
+                                                }}
+                                            >
+                                                <FileTableTopBar />
+                                            </BasePathContext.Provider>
+                                        </RowContext.Provider>
                                     )
                                 }}
                             />
                         </Spin>
                     </div>
-                    <div>
-                        <UploadFiles />
-                    </div>
                 </Content>
                 <Footer className='footer'>
-                    Ant Design ©2018 Created by Ant UED</Footer>
+                    Ant Design ©2018 Created by Ant UED
+                </Footer>
             </Layout>
         </Layout>
     );

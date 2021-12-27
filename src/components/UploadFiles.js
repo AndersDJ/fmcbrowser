@@ -1,7 +1,11 @@
-import { Upload, message } from 'antd';
+import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BasePathContext } from '../pages/FileControl';
+import Modal from 'antd/lib/modal/Modal';
+import {
+    UploadOutlined,
+} from '@ant-design/icons';
 
 
 const { Dragger } = Upload;
@@ -10,6 +14,7 @@ const { Dragger } = Upload;
 function UploadFiles() {
 
     const { basePath, refresh, setRefresh } = useContext(BasePathContext)
+
 
     const props = {
         name: 'file',
@@ -40,17 +45,38 @@ function UploadFiles() {
         // }
     };
 
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+
+
     return (
-        <Dragger {...props}>
-            <p className="ant-upload-drag-icon">
-                <InboxOutlined />
-            </p>
-            <p className="ant-upload-text">Click or drag file to this area to upload</p>
-            <p className="ant-upload-hint">
-                Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                band files
-            </p>
-        </Dragger>
+        <>
+            <Button type="circle" onClick={showModal} icon={<UploadOutlined />} />
+            <Modal title={"Upload to " + basePath} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <Dragger {...props}>
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">Click or drag file to this area to upload</p>
+                    <p className="ant-upload-hint">
+                        Support for a single or bulk upload. Strictly prohibit from uploading company data or other
+                        band files
+                    </p>
+                </Dragger>
+            </Modal>
+        </>
     )
 }
 
